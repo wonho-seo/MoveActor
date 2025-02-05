@@ -8,11 +8,11 @@ ASpinnerActor::ASpinnerActor() : SpinSpeed(1.0f)
 {
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootScene"));
-	SetRootComponent(RootComponet);
+	SceneRoot = CreateDefaultSubobject<USceneComponent>(TEXT("RootScene"));
+	SetRootComponent(SceneRoot);
 
 	StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMeshComponent"));
-	StaticMeshComponent->SetupAttachment(RootComponet);
+	StaticMeshComponent->SetupAttachment(SceneRoot);
 }
 
 // Called when the game starts or when spawned
